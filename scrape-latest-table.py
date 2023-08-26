@@ -22,7 +22,7 @@ headers = {
 tabs_df = pd.read_csv("./data/lge_tables.csv", parse_dates=["game_date"])
 latest_tab = tabs_df.game_date.max()
 
-results_df = pd.read_csv("https://raw.githubusercontent.com/petebrown/update-results/main/data/results_df.csv", parse_dates=["game_date"])
+results_df = pd.read_csv("https://raw.githubusercontent.com/petebrown/data-updater/main/data/results.csv", parse_dates=["game_date"])
 lge_df = results_df[results_df.game_type == "League"][["season", "game_date", "ssn_comp_game_no", "competition"]].rename(columns = {"ssn_comp_game_no": "game_no"})
 
 latest_game = lge_df.game_date.max()
