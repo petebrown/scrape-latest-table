@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
+from io import StringIO
 
 def construct_url(competition, game_date):
     game_date = pd.to_datetime(game_date)
@@ -42,7 +43,7 @@ if latest_game > latest_tab:
         r = requests.get(url, headers = headers)
         doc = BeautifulSoup(r.text, 'html.parser')
 
-        table = pd.read_html(str(doc))[0]
+        table = pd.read_html(StringIO(str(doc)))[0]
 
         table["pos"] = table.index + 1
         table["url"] = url
