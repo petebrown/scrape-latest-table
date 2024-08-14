@@ -40,8 +40,18 @@ if latest_game > latest_tab:
     new_tables = []
 
     for url in urls:
-        r = requests.get(url, headers = headers)
-        doc = BeautifulSoup(r.text, 'html.parser')
+        # r = requests.get(url, headers = headers)
+        # doc = BeautifulSoup(r.text, 'html.parser')
+        from selenium import webdriver
+        from selenium.webdriver.chrome.options import Options
+        options = Options()
+        options.add_argument("--headless")
+        options.add_argument("--disable-gpu")
+        options.add_argument("--no-sandbox")
+        driver = webdriver.Chrome(options=options)
+        driver.get(url)
+        page_source = driver.page_source
+        doc = BeautifulSoup(driver., 'html.parser')
 
         table = pd.read_html(StringIO(str(doc)))[0]
 
