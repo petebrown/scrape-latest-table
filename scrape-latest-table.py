@@ -51,7 +51,7 @@ if latest_game > latest_tab:
         driver = webdriver.Chrome(options=options)
         driver.get(url)
         page_source = driver.page_source
-        doc = BeautifulSoup(driver., 'html.parser')
+        doc = BeautifulSoup(page_source, 'html.parser')
 
         table = pd.read_html(StringIO(str(doc)))[0]
 
