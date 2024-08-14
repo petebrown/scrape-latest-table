@@ -17,7 +17,7 @@ jobs:
         with:
           python-version: '3.11.0'
       - name: Install necessary python packages
-        run: pip install pandas beautifulsoup4 requests lxml
+        run: pip install pandas beautifulsoup4 requests lxml html5lib
       # Make sure scraper filename matches the filename in the repo
       - name: Run the scraping script
         run: python scrape-latest-table.py
