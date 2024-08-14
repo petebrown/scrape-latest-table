@@ -53,6 +53,8 @@ if latest_game > latest_tab:
         page_source = driver.page_source
         doc = BeautifulSoup(page_source, 'html.parser')
 
+        print(doc)
+
         table = pd.read_html(StringIO(str(doc)))[0]
 
         table["pos"] = table.index + 1
