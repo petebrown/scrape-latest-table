@@ -41,7 +41,7 @@ if latest_game > latest_tab:
 
     for url in urls:
         r = requests.get(url, headers = headers)
-        doc = BeautifulSoup(r.text, 'html.parser')
+        doc = BeautifulSoup(r.text, 'lxml')
 
         table = pd.read_html(StringIO(str(doc)))[0]
 
