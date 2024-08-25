@@ -118,6 +118,8 @@ if latest_game > latest_tab:
     new_tables = []
 
     for game_date in game_dates:
+        game_date = game_date.strftime('%Y-%m-%d')
+
         table = get_league_table(game_date)
         
         new_tables.append(table)
