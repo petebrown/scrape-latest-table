@@ -86,6 +86,8 @@ def get_league_table(game_date = date_today()):
 
     f = get_fixtures(game_date)
 
+    print(f)
+
     match_id = get_match_id(f[0])
 
     t = get_table(match_id)
