@@ -32,7 +32,7 @@ def get_fixtures(start_date, end_date=None):
     if not end_date:
         end_date = start_date
     fixtures = f'https://web-cdn.api.bbci.co.uk/wc-poll-data/container/sport-data-scores-fixtures?selectedEndDate={end_date}&selectedStartDate={start_date}&todayDate={date_today()}&urn=urn%3Abbc%3Asportsdata%3Afootball%3Ateam%3Atranmere-rovers&useSdApi=false'
-    print(request_json(fixtures))
+    print(fixtures)
     return request_json(fixtures)['eventGroups']
 
 
