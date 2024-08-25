@@ -82,11 +82,8 @@ def process_league_table_df(df: pd.DataFrame, game_date: str, tab_url: str) -> p
     return df
 
 def get_league_table(game_date = date_today()):
-    game_date = date_today()
 
     f = get_fixtures(game_date)
-
-    print(f)
 
     match_id = get_match_id(f[0])
 
